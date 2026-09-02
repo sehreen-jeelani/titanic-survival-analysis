@@ -31,7 +31,7 @@ This was my first time working with a messy, real-world dataset. My goal wasn't 
 
 ## Visualizations
 
-Charts are stored in `visuals/survival_analysis/`, including:
+Charts are stored in the [`visuals/survival_analysis/`](visuals/survival_analysis/) folder, including:
 
 - Survival Rate by Sex
 - Survival Rate by Passenger Class
@@ -46,11 +46,11 @@ Charts are stored in `visuals/survival_analysis/`, including:
 ## Technologies Used
 
 - **Python 3**
-- **Pandas** — data cleaning, transformation, and analysis
-- **NumPy** — numerical operations
-- **Matplotlib & Seaborn** — data visualization
-- **Jupyter Notebook** — interactive analysis
-- **Git & GitHub** — version control and project management
+- **Pandas** : data cleaning, transformation, and analysis
+- **NumPy** : numerical operations
+- **Matplotlib & Seaborn** : data visualization
+- **Jupyter Notebook** : interactive analysis
+- **Git & GitHub** : version control and project management
 
 ## How I Approached This Analysis
 
