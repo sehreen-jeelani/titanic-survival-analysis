@@ -33,15 +33,21 @@ This was my first time working with a messy, real-world dataset. My goal wasn't 
 
 Charts are stored in the [`visuals/survival_analysis/`](visuals/survival_analysis/) folder, including:
 
-- Survival Rate by Sex
-- Survival Rate by Passenger Class
-- Survival Rate by Sex and Passenger Class
-- Survival Rate by Age and Sex
-- Survival Rate by Family Size
-- Survival Rate by Title Group
-- Survival Rate by Cabin Information
-- Survival Rate by Deck
-- Survival Rate by Port of Embarkation
+### Survival Rate by Sex
+
+![Survival Rate by Sex](visuals/survival_analysis/survival_rate_by_sex.png)
+
+### Survival Rate by Passenger Class
+
+![Survival Rate by Passenger Class](visuals/survival_analysis/survival_rate_by_class.png)
+
+### Survival Rate by Sex and Passenger Class
+
+![Survival Rate by Sex and Passenger Class](visuals/survival_analysis/survival_rate_by_sex_class.png)
+
+### Survival Rate by Age and Sex
+
+![Survival Rate by Age and Sex](visuals/survival_analysis/survival_rate_by_age_and_sex.png)
 
 ## Technologies Used
 
