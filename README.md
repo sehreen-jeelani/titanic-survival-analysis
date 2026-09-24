@@ -36,25 +36,25 @@ This was my first time working with a messy dataset. My goal wasn't just to gene
 ### 1. Survival Rate by Sex
 - **What the data showed:** Sex was by far the clearest differentiator in survival rate among the demographic variables I checked. **74.2%** of female passengers survived compared to **18.9%** of male passengers.
 
-![Survival Rate by Sex](visuals/survival_analysis/survival_by_sex.png)
+![Survival Rate by Sex](survival_rate_by_sex.png)
 
 
 ### 2. Survival Rate by Passenger Class
 - **What the data showed:** Passenger class showed a clear difference in survival rates. First class passengers achieved a **63.0%** survival rate, compared to **47.3%** in second class and **24.2%** in third class.
 
-![Survival Rate by Passenger Class](visuals/survival_analysis/survival_by_pclass.png)
+![Survival Rate by Passenger Class](survival_rate_by_class.png)
 
 
 ### 3. Combining Sex and Passenger Class
 - **What the data showed:** The survival advantage for women held across every class, though third class female passengers (**50.0%**) fared noticeably worse than those in first class (**96.8%**).
 
-![Survival Rate by Sex and Passenger Class](visuals/survival_analysis/survival_by_sex_pclass.png)
+![Survival Rate by Sex and Passenger Class](survival_rate_by_sex_class.png)
 
 
 ### 4. Survival Rate by Age and Sex
 - **What the data showed:** Children under 12 showed higher survival rates across the groups analyzed. While this aligns with historical accounts of prioritizing children during evacuation, the dataset alone cannot establish whether that was the cause of the difference.
 
-![Survival Rate by Age and Sex](visuals/survival_analysis/survival_by_age_sex.png)
+![Survival Rate by Age and Sex](survival_rate_by_age_sex.png)
 
 
 ## 📁 Repository Structure
