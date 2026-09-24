@@ -1,112 +1,73 @@
-# Curious About the Titanic: My First Real-Data Project
+# 🚢 Titanic Survival Analysis: EDA & Feature Engineering
 
-An exploratory data analysis project where I wanted to understand what the Titanic passenger data could reveal about survival not just the overall rate, but the patterns behind it.
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=flat-square&logo=python&logoColor=black)
+![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=flat-square&logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
-## Project Objective
+An exploratory data analysis project looking into the passenger patterns behind survival on the RMS Titanic. Instead of jumping straight into machine learning, I focused on data cleaning, engineering new features, and seeing what the numbers actually reveal.
 
-Growing up, we all hear the story of the Titanic but when I started learning data analysis, I got curious about what the data could actually tell me. Was it really "women and children first," or did class, age, and family size matter more?
 
-I wanted to see how survival connected to sex, passenger class, age, family size, title, cabin information, and port of embarkation both on their own and in combination.
+## 📌 Why I Built This
 
-This was my first time working with a messy, real-world dataset. My goal wasn't just to create charts, but to learn how to move from raw data to real observations and evidence.
+We've all heard the story of the Titanic, but when I started learning data analysis, I wanted to see what the data actually says. Was it strictly "women and children first," or did passenger class, age, and family dynamics play a bigger role than people think?
 
-## Workflow
+I set out to explore how survival connected to sex, class, age, family size, deck levels, and embarkation ports—both individually and combined.
 
-1. **Data Wrangling** : Inspected the dataset, identified missing values and inconsistencies, and cleaned the data while considering how the gaps might affect the analysis.
-2. **Feature Engineering** : Built new variables: `FamilySize`, `IsAlone`, `TitleGroup`, `Deck`, `CabinKnown`, `AgeGroup` to surface patterns the original columns didn't show directly.
-3. **Survival Analysis** : Compared survival across sex, class, age, family size, title, cabin information, deck, and embarkation, including combinations of these factors.
-4. **Data Visualization** : Built charts to make the main patterns easier to compare and interpret.
+This was my first time working with a messy dataset. My goal wasn't just to generate pretty charts, but to learn how to ask better questions, clean missing data without making bad assumptions, and distinguish between a genuine pattern and pure coincidence.
 
-## Key Insights
 
-**Sex showed the strongest survival difference:** 74.2% of female passengers survived vs. 18.9% of male passengers, and the gap remained strong across passenger classes and age groups.
+## 🛠️ Key Technical Features & Workflow
 
-**Class bought a better chance of survival:** rates dropped from 63.0% (1st class) to 47.3% (2nd class) to 24.2% (3rd class).
+1. **Data Cleaning & Missing Value Strategy:** Analyzed missing data patterns in `Age`, `Cabin`, and `Embarked`. Used median imputation for missing age values and handled missing embarkation and cabin entries without distorting distributions.
+2. **Custom Feature Engineering:**
+   - **`FamilySize` & `IsAlone`:** Combined `SibSp` and `Parch` to quantify family dynamics and distinguish solo travelers from groups.
+   - **`TitleGroup`:** Extracted honorifics from `Name` strings (e.g., *Mr, Mrs, Miss, Master, Officer*) to retain social status signals.
+   - **`Deck` & `CabinKnown`:** Derived cabin decks from raw strings while creating a flag to track whether cabin location data was available.
+   - **`AgeGroup`:** Binned continuous ages into logical life stages (*Child, Teen, Adult, Senior*) for clearer categorical comparisons.
+3. **Exploratory Bivariate & Multivariate Analysis:** Examined single variables first, then combined them to observe how overlapping factors were associated with survival outcomes.
+4. **Data Visualizations:** Built comparative charts using Seaborn and Matplotlib to visualize the main survival patterns.
 
-**Family size didn't follow a simple pattern:** solo travelers survived at about 30.4%, small family groups did better, and survival dropped again among the largest families.
 
-**Age alone didn't tell a clean story** but combined with sex, the female-male gap held up strongly across most age groups.
+## 📊 Key Findings & Visuals
 
-**Title, cabin information, deck, and embarkation showed additional differences**, but these relationships overlap with other passenger characteristics and should not be interpreted as independent effects.
+### 1. Survival Rate by Sex
+- **What the data showed:** Sex was by far the clearest differentiator in survival rate among the demographic variables I checked. **74.2%** of female passengers survived compared to **18.9%** of male passengers.
 
-## Visualizations
+![Survival Rate by Sex](visuals/survival_analysis/survival_by_sex.png)
 
-Charts are stored in the [`visuals/survival_analysis/`](visuals/survival_analysis/) folder, including:
 
-### Survival Rate by Sex
+### 2. Survival Rate by Passenger Class
+- **What the data showed:** Passenger class showed a clear difference in survival rates. First class passengers achieved a **63.0%** survival rate, compared to **47.3%** in second class and **24.2%** in third class.
 
-![Survival Rate by Sex](visuals/survival_analysis/survival_rate_by_sex.png)
+![Survival Rate by Passenger Class](visuals/survival_analysis/survival_by_pclass.png)
 
-### Survival Rate by Passenger Class
 
-![Survival Rate by Passenger Class](visuals/survival_analysis/survival_rate_by_class.png)
+### 3. Combining Sex and Passenger Class
+- **What the data showed:** The survival advantage for women held across every class, though third class female passengers (**50.0%**) fared noticeably worse than those in first class (**96.8%**).
 
-### Survival Rate by Sex and Passenger Class
+![Survival Rate by Sex and Passenger Class](visuals/survival_analysis/survival_by_sex_pclass.png)
 
-![Survival Rate by Sex and Passenger Class](visuals/survival_analysis/survival_rate_by_sex_class.png)
 
-### Survival Rate by Age and Sex
+### 4. Survival Rate by Age and Sex
+- **What the data showed:** Children under 12 showed higher survival rates across the groups analyzed. While this aligns with historical accounts of prioritizing children during evacuation, the dataset alone cannot establish whether that was the cause of the difference.
 
-![Survival Rate by Age and Sex](visuals/survival_analysis/survival_rate_by_age_and_sex.png)
+![Survival Rate by Age and Sex](visuals/survival_analysis/survival_by_age_sex.png)
 
-## Technologies Used
 
-- **Python 3**
-- **Pandas** : data cleaning, transformation, and analysis
-- **NumPy** : numerical operations
-- **Matplotlib & Seaborn** : data visualization
-- **Jupyter Notebook** : interactive analysis
-- **Git & GitHub** : version control and project management
-
-## How I Approached This Analysis
-
-Since this was my first time working with a real dataset, I treated the project as both an analysis and a learning exercise.
-
-I started by understanding the structure of the data and identifying missing values, then cleaned it, built new features, and moved gradually from single-variable comparisons to combinations of variables.
-
-The biggest lesson: data analysis isn't just about getting an answer from a dataset. It's about deciding which questions are worth asking, checking whether the evidence actually supports the conclusion, and not confusing association with causation.
-
-## Project Structure
+## 📁 Repository Structure
 
 ```text
 titanic-survival-analysis/
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── raw/                   # Original dataset files
+│   └── processed/             # Cleaned data with engineered features
 ├── notebooks/
-│   └── titanic_analysis.ipynb
+│   └── titanic_analysis.ipynb # Step-by-step analysis notebook
 ├── visuals/
-│   └── survival_analysis/
-├── README.md
-├── requirements.txt
-└── .gitignore
-```
-
-## How to Run
-
-1. Clone the repository:
-```bash
-   git clone https://github.com/sehreen-jeelani/titanic-survival-analysis.git
-```
-2. Install dependencies:
-```bash
-   pip install -r requirements.txt
-```
-3. Launch the notebook:
-```bash
-   jupyter notebook
-```
-
-## Limitations
-
-- `Cabin` was missing for roughly 77% of passengers, so any cabin or deck based pattern is a lead worth exploring further, not a solid conclusion.
-- This is an observational dataset the patterns found here show correlation, not proof of what caused survival.
-- Sample sizes for some subgroups (very large families, rare titles) are small enough that those specific results should be read with caution.
-
-## Conclusion
-
-This was my first real dataset, and it taught me that analysis is really about learning to ask better questions not just writing code.
-
-The answer to my original question turned out to be more complicated than a simple "women and children first." Sex showed the strongest single survival difference, while class was also strongly associated with survival. Family size, age, and title added further context when I looked at them alongside other variables.
-
-More importantly, I learned that finding a pattern is only the beginning. I also have to ask how reliable that pattern is, what other variables might be connected to it, and what the data can't tell me.
+│   └── survival_analysis/     # Exported plots and charts
+├── .gitignore                 # Files excluded from Git
+├── README.md                  # Project documentation
+└── requirements.txt           # Python dependencies
